@@ -4,7 +4,7 @@
 
 ## Overview
 
-This project is an advanced Analytical Power BI Dashboard, designed to showcase a variety of Business Intelligence (BI) concepts and techniques. It implements data modeling for efficient data availability and accessibility, uses Power Query for advanced-level data manipulation and transformation, and utilizes DAX (Data Analysis Expressions) for deriving quantitative insights.
+This project is an advanced Analytical Power BI Dashboard, designed to showcase a variety of Business Intelligence (BI) concepts and techniques. It implements data modeling for efficient data availability and accessibility, leverages Power Query for advanced-level data manipulation and transformation, and utilizes DAX (Data Analysis Expressions) for deriving quantitative insights.
 
 ## About the Data & Transformation
 
@@ -90,34 +90,34 @@ The primary goal of this dashboard is to facilitate analysis of a large historic
 
 Several DAX calculations were implemented to derive meaningful insights from the dataset. Below are some key formulas used in the dashboard:
 
-1. Total Number of Races
+- Total Number of Races
 
-No_of_Races = DISTINCTCOUNT('aly6060 fact_result'[raceId])
+  No_of_Races = DISTINCTCOUNT('aly6060 fact_result'[raceId])
 
-2. Top Driver Points
+- Top Driver Points
 
-TopDriverPoints = CALCULATE(MAX('aly6060 fact_result'[points]),\
+  TopDriverPoints = CALCULATE(MAX('aly6060 fact_result'[points]),\
       ALL('aly6060 fact_result'), \
       VALUES('aly6060 fact_result'[Driver's Name]))
 
-3. Top Performing Driver
+- Top Performing Driver
 
-TopDriverName =
-CALCULATE(
+  TopDriverName =
+  CALCULATE(
     MAX('aly6060 fact_result'[Driver's Name]),
     FILTER(
         'aly6060 fact_result',
         'aly6060 fact_result'[points] = [TopDriverPoints]
+      )
     )
-)
 
-4. Total Number of Cities
+- Total Number of Cities
 
-Total Cities = DISTINCTCOUNT('aly6060 fact_result'[aly6060.dim_circuits.location])
+  Total Cities = DISTINCTCOUNT('aly6060 fact_result'[aly6060.dim_circuits.location])
 
-5. Total Number of Wins
+- Total Number of Wins
 
-WinCount = COUNTROWS(FILTER('aly6060 fact_result', 'aly6060 fact_result'[Win]= "Yes"))
+  WinCount = COUNTROWS(FILTER('aly6060 fact_result', 'aly6060 fact_result'[Win]= "Yes"))
 
 Many additional DAX measures were created to further enhance data analysis and visualization.
 
@@ -125,11 +125,11 @@ Many additional DAX measures were created to further enhance data analysis and v
 
 This Power BI Dashboard effectively combines creative data visualization with advanced data analytics. It provides an intuitive interface to explore vast historical racing data, uncover trends, and derive meaningful business insights. The integration of Power BI's DAX calculations and Python-based visualizations showcases the powerful capabilities of modern data analytics tools.
 
-Feel free to explore the dashboard and analyze the insights it provides!
+
 
 ### Repository Contents
 
-- Power BI .pbix File: Contains the complete dashboard. ![download here](pb1.pbix)
+- Power BI .pbix File: Contains the complete dashboard. [download here](pb1.pbix)
 
 
 - Dataset Files: Raw and transformed data.
@@ -138,8 +138,6 @@ Feel free to explore the dashboard and analyze the insights it provides!
 - Python Notebook Scripts: For custom visualizations.
 
 - Documentation: Detailed explanation of data sources, transformations, and modeling techniques.
-
-
 
 
 
