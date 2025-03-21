@@ -125,6 +125,8 @@ Many additional DAX measures were created to further enhance data analysis and v
 
 This Power BI Dashboard effectively combines creative data visualization with advanced data analytics. It provides an intuitive interface to explore vast historical racing data, uncover trends, and derive meaningful business insights. The integration of Power BI's DAX calculations and Python-based visualizations showcases the powerful capabilities of modern data analytics tools.
 
+### Demo
+You can check out the demo video of this dashboard here : https://www.youtube.com/watch?v=2OTI_95P6-o
 
 
 ### Repository Contents
